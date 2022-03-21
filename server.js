@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require('body-parser');
 const app = express();
+const AWS = require('aws-sdk');
 var corsOptions = {
   origin: "http://localhost:8081"
 };
@@ -12,12 +13,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Bienvenido a AHyS DBOperations" });
 });
 
 require("./app/routes/AHyS.routes")(app);
 require("./app/routes/InputData.routes")(app);
 require("./app/routes/Local.routes")(app);
+require("./app/routes/ImageUpload.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
