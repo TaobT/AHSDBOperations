@@ -4,7 +4,9 @@ module.exports = mongoose => {
       mongoose.Schema(
         {
             Nombre_Local: String,
-            Direccion: String
+            Direccion: String,
+            Propietario: String,
+            Aforo_Max: Number
         },
         {
           collection: 'Locales'

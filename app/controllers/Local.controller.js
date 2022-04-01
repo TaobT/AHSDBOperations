@@ -11,7 +11,9 @@ exports.create = (req, res) => {
     // Crear AHyS
     const local = new Local({
       Nombre_Local: req.body.Nombre_Local,
-      Direccion: req.body.Direccion
+      Direccion: req.body.Direccion,
+      Propietario: req.body.Propietario,
+      Aforo_Max: req.body.Aforo_Max
     });
     // Guardar AHyS en la base de datos
     local
